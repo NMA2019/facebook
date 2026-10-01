@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Créer, certifier et monétiser sa Page Facebook : tutoriel pas à pas</title>
+<meta name="description" content="Tutoriel complet en français : créer une Page Facebook, ajouter un administrateur, la rendre officielle, activer Meta Business Suite et la monétisation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F3F6FB;
+    --surface: #FFFFFF;
+    --ink: #10203A;
+    --muted: #51617A;
+    --line: #D3DCE9;
+    --meta: #0866FF;
+    --meta-deep: #0A4FC4;
+    --meta-wash: #E6F0FF;
+    --ok: #0E7A56;
+    --ok-wash: #E3F5EE;
+    --warn: #8A5200;
+    --warn-wash: #FFF3D6;
+    --radius: 14px;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --text: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-padding-top: 84px; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    overflow-wrap: break-word;
+  }
+
+  a { color: var(--meta-deep); }
+  :focus-visible { outline: 3px solid var(--meta); outline-offset: 3px; border-radius: 4px; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; letter-spacing: -0.015em; }
+  p { margin: 0 0 1em; }
+  ul { padding-left: 1.2em; }
+  li { margin-bottom: 0.35em; }
+
+  /* ---------- En-tête ---------- */
+  .hero { background: var(--surface); border-bottom: 1px solid var(--line); }
+  .hero-inner { max-width: 1180px; margin: 0 auto; padding: 28px 18px 36px; display: grid; gap: 30px; }
+  .hero h1 { font-size: clamp(2rem, 9vw, 3.5rem); font-weight: 800; }
+  .hero .lead { font-size: 1.05rem; color: var(--muted); max-width: 52ch; margin: 16px 0 20px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .facts li { background: var(--meta-wash); color: var(--meta-deep); font-weight: 600; font-size: 0.88rem; padding: 6px 12px; border-radius: 999px; margin: 0; }
+
+  .mock-wrap { width: 100%; max-width: 440px; justify-self: center; }
+  .mock { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 18px 40px -22px rgba(16, 32, 58, 0.45); padding: 0 0 18px; }
+  .mock-cover {
+    height: 96px; border-radius: 18px 18px 0 0;
+    background: radial-gradient(circle at 18% 120%, #5B9BFF 0 34%, transparent 35%), radial-gradient(circle at 82% -20%, #0A4FC4 0 38%, transparent 39%), #0866FF;
+  }
+  .part { position: relative; }
+  .pin {
+    position: absolute; width: 26px; height: 26px; border-radius: 50%;
+    background: var(--ink); color: #fff; font: 700 0.8rem/26px var(--display);
+    text-align: center; text-decoration: none; box-shadow: 0 0 0 3px var(--surface); z-index: 2;
+  }
+  .pin:hover { background: var(--meta-deep); }
+  .mock-id { display: flex; align-items: flex-end; gap: 12px; padding: 0 16px; margin-top: -24px; }
+  .mock-avatar {
+    width: 76px; height: 76px; flex: none; border-radius: 50%;
+    border: 4px solid #fff; box-shadow: 0 0 0 1px var(--line);
+    display: grid; place-items: center; font: 800 1.4rem var(--display); color: var(--meta-deep);
+    background-image: linear-gradient(135deg, #fff, var(--meta-wash));
+  }
+  .mock-name { font: 700 1rem/1.2 var(--display); display: flex; align-items: center; gap: 5px; flex-wrap: nowrap; white-space: nowrap; }
+  .mock-cat { color: var(--muted); font-size: 0.86rem; }
+  .stat { white-space: nowrap; }
+  .badge { width: 20px; height: 20px; flex: none; }
+  .mock-name .pin, .mock-cat .pin { position: static; display: inline-block; margin-left: 2px; width: 22px; height: 22px; font-size: 0.72rem; line-height: 22px; vertical-align: middle; flex: none; }
+  .mock-row { display: flex; flex-wrap: wrap; gap: 14px 10px; padding: 18px 16px 0; align-items: center; }
+  .btn-mock { font: 600 0.86rem var(--text); padding: 7px 13px; border-radius: 8px; background: var(--meta-wash); color: var(--meta-deep); position: relative; }
+  .btn-mock.primary { background: var(--meta); color: #fff; }
+  .btn-mock .pin { top: -13px; right: -10px; }
+  .team { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--muted); position: relative; padding-right: 22px; }
+  .team .dots { display: flex; }
+  .team .dots i { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; margin-left: -8px; background: #8FB6F5; }
+  .team .dots i:first-child { margin-left: 0; background: #0A4FC4; }
+  .team .dots i:nth-child(3) { background: #7ACBA9; }
+  .team .pin { top: -13px; right: -4px; }
+  .earn { margin: 18px 16px 0; padding: 12px 14px; background: var(--ok-wash); border-radius: 10px; display: flex; align-items: flex-end; gap: 14px; font-size: 0.85rem; color: var(--ok); font-weight: 600; }
+  .earn .bars { display: flex; align-items: flex-end; gap: 5px; height: 34px; margin-left: auto; }
+  .earn .bars i { width: 9px; background: var(--ok); border-radius: 3px 3px 0 0; opacity: .85; }
+  .earn .pin { top: -13px; right: -8px; }
+
+  .legend { list-style: none; padding: 0; margin: 18px 0 0; display: grid; gap: 2px; font-size: 0.97rem; }
+  .legend li { margin: 0; }
+  .legend a { display: flex; gap: 12px; align-items: center; text-decoration: none; color: var(--ink); font-weight: 500; min-height: 44px; }
+  .legend a:hover span:last-child { text-decoration: underline; }
+  .legend .n { width: 24px; height: 24px; border-radius: 50%; background: var(--ink); color: #fff; font: 700 0.76rem/24px var(--display); text-align: center; flex: none; }
+
+  /* ---------- Mise en page ---------- */
+  .layout { max-width: 1180px; margin: 0 auto; padding: 0 18px 32px; }
+  .rail { position: sticky; top: 0; z-index: 30; background: var(--paper); margin: 0 -18px 22px; padding: 8px 18px 0; border-bottom: 1px solid var(--line); }
+  .rail h2 { display: none; }
+  .rail ol { list-style: none; margin: 0; padding: 0 0 8px; display: flex; gap: 6px; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; }
+  .rail ol::-webkit-scrollbar { display: none; }
+  .rail li { margin: 0; scroll-snap-align: start; flex: none; }
+  .rail a { display: flex; gap: 8px; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 999px; text-decoration: none; color: var(--muted); font-weight: 600; font-size: 0.92rem; white-space: nowrap; background: var(--surface); box-shadow: 0 0 0 1px var(--line); }
+  .rail a .n { width: 22px; height: 22px; flex: none; border-radius: 50%; font: 700 0.74rem/22px var(--display); text-align: center; background: var(--paper); color: var(--muted); }
+  .rail a[aria-current="true"] { background: var(--ink); color: #fff; box-shadow: none; }
+  .rail a[aria-current="true"] .n { background: var(--meta); color: #fff; }
+  .progress { margin: 0 -18px; }
+  .progress > span { display: none; }
+  .bar { height: 4px; background: var(--line); overflow: hidden; }
+  .bar span { display: block; height: 100%; width: 0; background: var(--ok); transition: width .25s ease; }
+
+  main { min-width: 0; max-width: 760px; }
+  .chapitre, .prelude { padding-bottom: 52px; }
+  .chapitre > h2, .prelude > h2 { font-size: clamp(1.55rem, 6.5vw, 2.4rem); font-weight: 800; display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .ch-n { width: 40px; height: 40px; flex: none; border-radius: 50%; background: var(--meta); color: #fff; font: 800 1.2rem/40px var(--display); text-align: center; }
+  .intro { font-size: 1.04rem; color: var(--muted); max-width: 62ch; }
+  h3 { font-size: 1.2rem; font-weight: 700; margin: 34px 0 12px; }
+
+  /* Étapes */
+  .steps { list-style: none; margin: 24px 0 0; padding: 0; counter-reset: s; }
+  .step { counter-increment: s; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; position: relative; padding-bottom: 28px; margin: 0; }
+  .step::before { content: ""; position: absolute; left: 19px; top: 44px; bottom: 2px; width: 2px; background: var(--line); }
+  .step:last-child { padding-bottom: 0; }
+  .step:last-child::before { display: none; }
+  .mark { display: block; cursor: pointer; position: relative; width: 40px; height: 44px; }
+  .mark input { position: absolute; opacity: 0; width: 44px; height: 44px; margin: 0; cursor: pointer; left: -2px; top: -2px; z-index: 1; }
+  .mark .num { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--surface); border: 2px solid var(--meta); color: var(--meta-deep); font: 700 1.05rem var(--display); transition: background .15s ease, color .15s ease, border-color .15s ease; }
+  .mark .num::before { content: counter(s); }
+  .mark input:checked + .num { background: var(--ok); border-color: var(--ok); color: #fff; }
+  .mark input:checked + .num::before { content: "✓"; }
+  .mark input:focus-visible + .num { outline: 3px solid var(--meta); outline-offset: 3px; }
+  .step h3 { margin: 8px 0 6px; font-size: 1.1rem; }
+  .step:has(input:checked) h3 { color: var(--muted); }
+  .step > div::after { content: ""; display: block; clear: both; }
+  .step p:last-child { margin-bottom: 0; }
+
+  .ui { display: inline-block; background: var(--meta-wash); color: var(--meta-deep); font-weight: 600; font-size: 0.9em; padding: 0 7px; border-radius: 6px; line-height: 1.5; }
+  .path { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 4px 0 12px; }
+  .path b { color: var(--muted); font-weight: 500; }
+  .fields { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; margin: 12px 0; }
+  .fields dl { margin: 0; display: grid; gap: 2px; font-size: 0.97rem; }
+  .fields dt { font-weight: 600; margin-top: 8px; }
+  .fields dt:first-child { margin-top: 0; }
+  .fields dd { margin: 0; color: var(--muted); }
+
+  /* Encadrés */
+  .callout { border-radius: var(--radius); padding: 14px 16px; margin: 20px 0; font-size: 0.97rem; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong:first-child { display: block; margin-bottom: 2px; font-family: var(--display); font-size: 1.02rem; }
+  .callout.tip { background: var(--meta-wash); }
+  .callout.tip strong:first-child { color: var(--meta-deep); }
+  .callout.warn { background: var(--warn-wash); }
+  .callout.warn strong:first-child { color: var(--warn); }
+  .callout.good { background: var(--ok-wash); }
+  .callout.good strong:first-child { color: var(--ok); }
+
+  /* Tableaux : cartes sur mobile, tableau dès 720 px */
+  .table-wrap { margin: 18px 0; }
+  table, thead, tbody, tr, th, td { display: block; }
+  thead { position: absolute; left: -9999px; }
+  tr { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; margin-bottom: 10px; }
+  td { padding: 5px 0; font-size: 0.96rem; }
+  td:first-child { font-family: var(--display); font-weight: 700; font-size: 1.04rem; padding-top: 0; }
+  td:not(:first-child)::before { content: attr(data-label); display: block; font-size: 0.76rem; color: var(--muted); font-weight: 600; }
+
+  /* Pré-requis */
+  .checks { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 10px; }
+  .checks li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 13px 14px 13px 46px; position: relative; font-size: 0.96rem; margin: 0; }
+  .checks li::before { content: ""; position: absolute; left: 14px; top: 16px; width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--meta); }
+  .checks b { display: block; font-family: var(--display); }
+
+  /* FAQ */
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 14px 16px; min-height: 48px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font: 700 1.4rem/1 var(--display); color: var(--meta); }
+  details[open] summary::after { content: "−"; }
+  details > div { padding: 0 16px 14px; color: var(--muted); }
+  details > div p:last-child { margin: 0; }
+
+  /* Niveaux d'une campagne */
+  .levels { display: grid; gap: 8px; margin: 18px 0; }
+  .lv { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; font-size: 0.95rem; }
+  .lv:nth-child(2) { margin-left: 14px; }
+  .lv:nth-child(3) { margin-left: 28px; }
+  .lv b { display: block; font-family: var(--display); font-size: 1.05rem; color: var(--meta-deep); }
+  .lv span { color: var(--muted); }
+
+  /* Indicateurs et boucle */
+  .kpis { display: grid; gap: 10px; margin: 18px 0; }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+  .kpi b { display: block; font: 700 1.05rem var(--display); color: var(--ink); }
+  .kpi span { color: var(--muted); font-size: 0.93rem; }
+  .loop { list-style: none; padding: 0; margin: 18px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+  .loop li { margin: 0; background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: 0.92rem; }
+  .loop li:nth-child(even) { background: var(--meta); }
+
+  /* ---------- Illustrations (schémas de téléphone) ---------- */
+  .shot { margin: 16px 0 0; text-align: center; }
+  .shot img { max-width: 100%; border-radius: 12px; border: 1px solid var(--line); }
+  .shot figcaption { font-size: 0.82rem; color: var(--muted); margin-top: 8px; line-height: 1.4; text-align: left; }
+  .phone { width: 210px; margin: 0 auto; border: 6px solid var(--ink); border-radius: 28px; background: #F7F9FC; overflow: hidden; position: relative; text-align: left; }
+  .phone::before { content: ""; position: absolute; top: 6px; left: 50%; width: 46px; height: 5px; margin-left: -23px; border-radius: 3px; background: var(--ink); z-index: 3; }
+  .scr { padding: 20px 10px 10px; font-size: 11px; line-height: 1.3; display: grid; gap: 7px; min-height: 290px; align-content: start; }
+  .s-bar { font: 700 12px var(--display); text-align: center; padding-bottom: 2px; }
+  .s-card { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 7px; }
+  .s-row { display: flex; align-items: center; gap: 7px; }
+  .s-between { justify-content: space-between; }
+  .s-av { width: 22px; height: 22px; border-radius: 50%; background: #8FB6F5; flex: none; }
+  .s-av.dark { background: var(--meta-deep); }
+  .s-line { height: 6px; border-radius: 3px; background: var(--line); flex: 1; }
+  .s-line.sh { flex: none; width: 60%; }
+  .s-btn { background: var(--meta); color: #fff; border-radius: 7px; text-align: center; padding: 8px 6px; font-weight: 600; }
+  .s-btn.ghost { background: var(--meta-wash); color: var(--meta-deep); }
+  .s-field { border: 1px solid var(--line); background: #fff; border-radius: 7px; padding: 5px 8px; font-weight: 600; }
+  .s-field small { display: block; font-size: 9px; color: var(--muted); font-weight: 500; }
+  .s-tog { width: 30px; height: 17px; border-radius: 9px; background: var(--line); position: relative; flex: none; }
+  .s-tog::after { content: ""; position: absolute; top: 2px; left: 2px; width: 13px; height: 13px; border-radius: 50%; background: #fff; }
+  .s-tog.on { background: var(--ok); }
+  .s-tog.on::after { left: 15px; }
+  .s-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .s-tile { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 9px 4px; text-align: center; font-weight: 600; }
+  .s-prog { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; margin-top: 4px; }
+  .s-prog i { display: block; height: 100%; background: var(--ok); }
+  .s-prog i.b { background: var(--meta); }
+  .s-nav { display: flex; justify-content: space-around; border-top: 1px solid var(--line); padding-top: 7px; margin-top: 4px; color: var(--muted); font-size: 9px; font-weight: 600; }
+  .s-nav .on { color: var(--meta-deep); }
+  .s-img { height: 82px; border-radius: 7px; background: linear-gradient(135deg, #5B9BFF, #0A4FC4); }
+  .s-bars { display: flex; align-items: flex-end; gap: 5px; height: 54px; }
+  .s-bars i { flex: 1; background: var(--meta); border-radius: 3px 3px 0 0; opacity: .85; }
+  .s-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; text-align: center; font-size: 9px; color: var(--muted); font-weight: 600; }
+  .s-days b { display: block; height: 34px; border-radius: 5px; background: #fff; border: 1px solid var(--line); color: var(--meta-deep); font-size: 8px; padding-top: 11px; }
+  .s-days b.r { background: var(--meta); color: #fff; border-color: var(--meta); }
+  .s-days b.p { background: var(--ok-wash); color: var(--ok); border-color: var(--ok-wash); }
+  .s-days b.l { background: var(--warn-wash); color: var(--warn); border-color: var(--warn-wash); }
+  .s-badge { width: 54px; height: 54px; margin: 6px auto 0; }
+  .s-center { text-align: center; }
+  .s-big { font: 800 15px var(--display); }
+  .hl { outline: 2px solid var(--meta); outline-offset: 2px; position: relative; }
+  .hl::after { content: ""; position: absolute; right: -5px; top: -5px; width: 11px; height: 11px; border-radius: 50%; background: var(--meta); box-shadow: 0 0 0 3px rgba(8, 102, 255, .25); }
+
+  footer { max-width: 1180px; margin: 0 auto; padding: 8px 18px 90px; color: var(--muted); font-size: 0.86rem; }
+
+  .totop { position: fixed; right: max(14px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: 48px; height: 48px; border-radius: 50%; background: var(--ink); color: #fff; font: 700 1.3rem/48px var(--display); text-align: center; text-decoration: none; box-shadow: 0 8px 20px -8px rgba(16, 32, 58, .6); opacity: 0; pointer-events: none; transform: translateY(8px); transition: opacity .2s ease, transform .2s ease; z-index: 40; }
+  .totop.show { opacity: 1; pointer-events: auto; transform: none; }
+
+  /* ---------- Tablette ---------- */
+  @media (min-width: 640px) {
+    body { font-size: 17px; }
+    .checks, .kpis { grid-template-columns: repeat(2, 1fr); }
+    .kpis { grid-template-columns: repeat(3, 1fr); }
+    .fields dl { grid-template-columns: 150px minmax(0, 1fr); gap: 8px 16px; }
+    .fields dt { margin-top: 0; }
+    .legend { grid-template-columns: 1fr 1fr; gap: 2px 18px; }
+    .step { grid-template-columns: 44px minmax(0, 1fr); gap: 18px; }
+    .mark, .mark input { width: 44px; }
+    .mark .num { width: 44px; height: 44px; }
+    .step::before { left: 21px; top: 48px; }
+    .ch-n { width: 46px; height: 46px; line-height: 46px; font-size: 1.35rem; }
+    .step > div:has(> .shot) { display: grid; grid-template-columns: minmax(0, 1fr) 220px; column-gap: 24px; align-content: start; }
+    .step > div:has(> .shot)::after { display: none; }
+    .step > div:has(> .shot) > * { grid-column: 1; }
+    .step > div:has(> .shot) > .shot { grid-column: 2; grid-row: 1 / span 12; margin: 6px 0 0; width: 220px; }
+  }
+
+  @media (min-width: 720px) {
+    .table-wrap { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow-x: auto; }
+    table { display: table; width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    thead { display: table-header-group; position: static; }
+    tbody { display: table-row-group; }
+    tr { display: table-row; border: 0; border-radius: 0; padding: 0; margin: 0; background: none; }
+    th, td { display: table-cell; text-align: left; padding: 12px 16px; vertical-align: top; border-bottom: 1px solid var(--line); }
+    th { font-family: var(--display); font-weight: 700; background: var(--paper); }
+    tr:last-child td { border-bottom: 0; }
+    td:first-child { font-size: 0.95rem; padding-top: 12px; }
+    td:not(:first-child)::before { content: none; }
+  }
+
+  /* ---------- Ordinateur ---------- */
+  @media (min-width: 900px) {
+    .hero-inner { grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 56px; padding: 56px 24px 64px; align-items: center; }
+    .mock-cover { height: 112px; }
+  }
+
+  @media (min-width: 1000px) {
+    html { scroll-padding-top: 24px; }
+    .layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 60px; padding: 48px 24px 40px; }
+    .rail { position: sticky; top: 24px; align-self: start; margin: 0; padding: 0; background: none; border: 0; z-index: 1; }
+    .rail h2 { display: block; font-size: 1.05rem; margin-bottom: 14px; }
+    .rail ol { flex-direction: column; overflow: visible; gap: 4px; padding: 0; }
+    .rail li { flex: initial; }
+    .rail a { border-radius: 10px; box-shadow: none; background: transparent; padding: 0 12px; white-space: normal; min-height: 42px; }
+    .rail a:hover { background: var(--surface); color: var(--ink); }
+    .rail a[aria-current="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 0 0 1px var(--line); }
+    .rail a[aria-current="true"] .n { background: var(--meta); color: #fff; }
+    .progress { margin: 26px 0 0; padding-top: 20px; border-top: 1px solid var(--line); font-size: 0.9rem; color: var(--muted); }
+    .progress > span { display: block; }
+    .progress strong { color: var(--ink); }
+    .bar { height: 8px; border-radius: 99px; margin-top: 8px; }
+    .chapitre, .prelude { padding-bottom: 64px; }
+    .totop { display: none; }
+  }
+
+  @media print {
+    .rail, .pin, .totop { display: none; }
+    .layout { display: block; }
+    body { background: #fff; }
+    .step, details, .shot { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <h1>Votre Page Facebook, de la création à la monétisation</h1>
+      <p class="lead">Un guide en sept chapitres, pensé pour le téléphone : créer la Page, donner accès à votre équipe, la faire reconnaître comme officielle, brancher Meta Business Suite, ouvrir la voie aux revenus, lancer une campagne publicitaire et faire grandir votre audience.</p>
+      <ul class="facts">
+        <li>Conçu pour le téléphone</li>
+        <li>Mis à jour en octobre 2026</li>
+        <li>Étapes à cocher au fil de la lecture</li>
+      </ul>
+    </div>
+
+    <div class="mock-wrap">
+      <div class="mock" role="img" aria-label="Schéma d'une Page Facebook avec cinq repères numérotés correspondant aux cinq chapitres">
+        <div class="mock-cover"></div>
+        <div class="mock-id">
+          <div class="part"><div class="mock-avatar">MP</div><a class="pin" href="#creer" aria-label="Chapitre 1 : créer la Page" style="left:58px;top:2px">1</a></div>
+          <div style="padding-bottom:6px">
+            <div class="mock-name">Ma Page Officielle
+              <svg class="badge" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0866FF" d="M12 1.8l2.5 1.7 3-.2 1.2 2.8 2.7 1.4-.4 3L22 12l-1.9 1.6.4 3-2.7 1.4-1.2 2.8-3-.2L12 22.2l-2.5-1.7-3 .2-1.2-2.8-2.7-1.4.4-3L2 12l1.9-1.6-.4-3 2.7-1.4 1.2-2.8 3 .2z"/><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7.8 12.3l3 3 5.6-6"/></svg>
+              <a class="pin" href="#certifier" aria-label="Chapitre 3 : rendre la Page officielle">3</a>
+            </div>
+            <div class="mock-cat">Boutique en ligne, <span class="stat">1 200 abonnés<a class="pin" href="#audience" aria-label="Chapitre 7 : faire grandir l’audience">7</a></span></div>
+          </div>
+        </div>
+        <div class="mock-row">
+          <span class="btn-mock primary">Suivre</span>
+          <span class="btn-mock">Message</span>
+          <span class="btn-mock">Business Suite<a class="pin" href="#business-suite" aria-label="Chapitre 4 : activer Meta Business Suite">4</a></span>
+          <span class="btn-mock">Booster<a class="pin" href="#pub" aria-label="Chapitre 6 : lancer une campagne publicitaire">6</a></span>
+          <span class="team"><span class="dots"><i></i><i></i><i></i></span>Équipe<a class="pin" href="#admin" aria-label="Chapitre 2 : ajouter un administrateur">2</a></span>
+        </div>
+        <div class="earn part">Revenus du mois
+          <span class="bars" aria-hidden="true"><i style="height:30%"></i><i style="height:48%"></i><i style="height:40%"></i><i style="height:72%"></i><i style="height:100%"></i></span>
+          <a class="pin" href="#monetiser" aria-label="Chapitre 5 : activer la monétisation">5</a>
+        </div>
+      </div>
+      <ol class="legend">
+        <li><a href="#creer"><span class="n">1</span><span>Créer la Page</span></a></li>
+        <li><a href="#admin"><span class="n">2</span><span>Ajouter un administrateur</span></a></li>
+        <li><a href="#certifier"><span class="n">3</span><span>Rendre la Page officielle</span></a></li>
+        <li><a href="#business-suite"><span class="n">4</span><span>Activer Meta Business Suite</span></a></li>
+        <li><a href="#monetiser"><span class="n">5</span><span>Activer la monétisation</span></a></li>
+        <li><a href="#pub"><span class="n">6</span><span>Lancer une campagne publicitaire</span></a></li>
+        <li><a href="#audience"><span class="n">7</span><span>Faire grandir son audience</span></a></li>
+      </ol>
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="rail" aria-label="Sommaire du tutoriel">
+    <h2>Sommaire</h2>
+    <ol id="nav"></ol>
+    <div class="progress" id="progress" aria-live="polite">
+      <span><strong id="done">0</strong> étape(s) terminée(s) sur <span id="total">0</span></span>
+      <div class="bar"><span id="barfill"></span></div>
+    </div>
+  </aside>
+
+  <main>
+
+    <!-- ============ AVANT DE COMMENCER ============ -->
+    <section class="prelude" id="avant">
+      <h2>Avant de commencer</h2>
+      <p class="intro">Préparez ces éléments : tout le reste du guide ira beaucoup plus vite, et vous éviterez les blocages les plus fréquents.</p>
+      <ul class="checks">
+        <li><b>Un compte Facebook personnel réel</b>Une Page se crée toujours depuis un compte personnel authentique. Les faux comptes sont bloqués.</li>
+        <li><b>La double authentification</b>Activez-la sur votre compte avant toute chose. Meta l’exige pour la certification.</li>
+        <li><b>Une adresse e-mail professionnelle</b>Elle servira pour Meta Business Suite et la récupération d’accès.</li>
+        <li><b>Un nom et une catégorie</b>Le nom officiel de votre marque, tel qu’il apparaît sur vos documents.</li>
+        <li><b>Un logo et une image de couverture</b>Logo carré d’au moins 320 × 320 px. Couverture de 820 × 312 px minimum, idéalement 1 640 × 624 px.</li>
+        <li><b>Vos informations de contact</b>Téléphone, site web, adresse, horaires, si votre activité les exige.</li>
+      </ul>
+      <div class="callout tip">
+        <strong>Les menus de Meta bougent souvent</strong>
+        <p>Les intitulés cités ici correspondent à la version actuelle de Facebook sur ordinateur. Sur mobile, les noms sont les mêmes mais l’accès passe par le menu <span class="ui">≡</span>. Si un libellé a changé, cherchez le mot-clé dans la barre de recherche des paramètres.</p>
+      </div>
+      <div class="callout tip">
+        <strong>Des schémas pour se repérer</strong>
+        <p>Les illustrations montrent le principe de chaque écran. L’apparence réelle varie selon votre appareil, votre pays et la version de l’application.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPITRE 1 ============ -->
+    <section class="chapitre" id="creer" data-nav="Créer la Page">
+      <h2><span class="ch-n">1</span>Créer la Page</h2>
+      <p class="intro">Dix minutes suffisent pour obtenir une Page propre. Prenez le temps de bien choisir le nom : il est difficile à modifier ensuite.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ouvrir l’outil de création</h3>
+            <p>Connectez-vous à Facebook depuis votre compte personnel, puis ouvrez la création de Page.</p>
+            <div class="path"><span class="ui">Menu</span><b>›</b><span class="ui">Pages</span><b>›</b><span class="ui">Créer une nouvelle Page</span></div>
+            <p>Raccourci : l’adresse <a href="https://www.facebook.com/pages/create" target="_blank" rel="noopener">facebook.com/pages/create</a> ouvre directement le formulaire.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : menu Facebook avec la vignette Pages mise en évidence"><div class="scr"><div class="s-bar">Menu</div><div class="s-grid"><div class="s-tile">Amis</div><div class="s-tile">Groupes</div><div class="s-tile">Marketplace</div><div class="s-tile hl">Pages</div><div class="s-tile">Vidéos</div><div class="s-tile">Souvenirs</div></div><div class="s-btn ghost">Créer une nouvelle Page</div></div></div><figcaption>Schéma. Ouvrez le menu, touchez <strong>Pages</strong>, puis <strong>Créer une nouvelle Page</strong>.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Renseigner les trois champs de départ</h3>
+            <div class="fields">
+              <dl>
+                <dt>Nom de la Page</dt><dd>Le nom de votre marque ou de votre organisation, sans mots inutiles ni majuscules excessives.</dd>
+                <dt>Catégorie</dt><dd>Choisissez jusqu’à trois catégories proches de votre activité (par exemple « Boutique en ligne » ou « Centre de formation »).</dd>
+                <dt>Bio</dt><dd>Une à deux phrases : ce que vous faites, pour qui, et où.</dd>
+              </dl>
+            </div>
+            <p>Cliquez ensuite sur <span class="ui">Créer la Page</span>.</p>
+            <div class="callout warn">
+              <strong>Choisissez le nom avec soin</strong>
+              <p>Le changement de nom est soumis à validation par Meta et reste limité. Évitez aussi les noms génériques ou trompeurs, qui peuvent être refusés ou bloquer la certification plus tard.</p>
+            </div>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : formulaire de création de Page avec nom, catégorie et bio"><div class="scr"><div class="s-bar">Créer une Page</div><div class="s-field"><small>Nom de la Page</small>Ma Page Officielle</div><div class="s-field"><small>Catégorie</small>Boutique en ligne</div><div class="s-field" style="height:62px"><small>Bio</small>Ce que nous faisons, pour qui…</div><div class="s-btn hl">Créer la Page</div></div></div><figcaption>Schéma. Trois champs à remplir, puis le bouton <strong>Créer la Page</strong>.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ajouter le logo et la couverture</h3>
+            <p>Cliquez sur l’icône appareil photo de la photo de profil, puis sur celle de la couverture. Gardez le contenu important au centre de la couverture : les bords sont rognés sur mobile.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Compléter les informations</h3>
+            <div class="path"><span class="ui">Gérer la Page</span><b>›</b><span class="ui">Modifier les informations</span></div>
+            <p>Ajoutez le site web, le téléphone, l’adresse, les horaires et les liens vers vos autres réseaux. Ajoutez aussi un bouton d’action visible en haut de la Page (<span class="ui">Envoyer un message</span>, <span class="ui">Appeler</span>, <span class="ui">S’inscrire</span>…).</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Choisir un nom d’utilisateur</h3>
+            <p>Le nom d’utilisateur (@votrenom) donne une adresse courte du type facebook.com/votrenom. Il se règle dans les informations de la Page. Prenez le même que sur vos autres réseaux si possible.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Publier 3 à 5 contenus avant d’inviter du monde</h3>
+            <p>Une Page vide inspire peu confiance. Publiez une présentation, quelques photos ou vidéos de votre activité, puis invitez vos contacts à suivre la Page.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ CHAPITRE 2 ============ -->
+    <section class="chapitre" id="admin" data-nav="Ajouter un administrateur">
+      <h2><span class="ch-n">2</span>Ajouter un administrateur</h2>
+      <p class="intro">Ne restez jamais seul à la tête de votre Page : si votre compte est piraté ou suspendu, vous perdez tout. Meta a remplacé les anciens rôles (Administrateur, Éditeur, Modérateur…) par deux types d’accès.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Type d’accès</th><th>Ce que la personne peut faire</th><th>À donner à</th></tr></thead>
+          <tbody>
+            <tr><td>Accès Facebook, contrôle total</td><td>Tout gérer, y compris les accès des autres personnes. C’est l’équivalent de l’ancien rôle d’administrateur.</td><td>Vous et un second responsable de confiance</td></tr>
+            <tr><td>Accès Facebook, contrôle partiel</td><td>Gérer le contenu, les messages, les statistiques ou les publicités, sans gérer les accès.</td><td>Collaborateurs réguliers</td></tr>
+            <tr><td>Accès aux tâches</td><td>Travailler uniquement via Meta Business Suite sur des tâches précises (publier, répondre, lancer des pubs).</td><td>Prestataires, stagiaires, agences</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Basculer vers votre Page</h3>
+            <p>Cliquez sur votre photo en haut à droite, puis sélectionnez la Page. Il faut agir « en tant que Page » pour accéder à ses réglages.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ouvrir l’accès à la Page</h3>
+            <div class="path"><span class="ui">Paramètres et confidentialité</span><b>›</b><span class="ui">Paramètres</span><b>›</b><span class="ui">Accès à la Page</span></div>
+            <p>Sur certains comptes, le chemin passe par <span class="ui">Configuration de la Page</span> avant <span class="ui">Accès à la Page</span>.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ajouter la personne</h3>
+            <p>Sous <span class="ui">Personnes ayant un accès Facebook</span>, cliquez sur <span class="ui">Ajouter</span>, recherchez le nom de la personne et sélectionnez son profil.</p>
+            <p>Si elle n’apparaît pas dans la recherche, ajoutez-la d’abord comme ami Facebook, ou passez par Meta Business Suite (<span class="ui">Paramètres</span> › <span class="ui">Personnes</span> › <span class="ui">Inviter des personnes</span>).</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Activer le contrôle total</h3>
+            <p>Activez l’option <span class="ui">Autoriser cette personne à avoir le contrôle total</span>, puis cliquez sur <span class="ui">Donner l’accès</span>. Saisissez votre mot de passe pour confirmer.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : écran Accès à la Page avec l’option Contrôle total activée"><div class="scr"><div class="s-bar">Accès à la Page</div><div class="s-card s-row"><span class="s-av"></span><div style="flex:1;display:grid;gap:4px"><span class="s-line" style="width:65%;flex:none"></span><span class="s-line" style="width:40%;flex:none"></span></div></div><div class="s-card s-row s-between"><span><strong>Contrôle total</strong><br><span style="color:#51617A">Gérer aussi les accès</span></span><span class="s-tog on hl"></span></div><div class="s-btn">Donner l’accès</div></div></div><figcaption>Schéma. Activez <strong>Contrôle total</strong> pour créer un administrateur, puis <strong>Donner l’accès</strong>.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Faire accepter l’invitation</h3>
+            <p>La personne reçoit une notification sur Facebook. Tant qu’elle n’a pas accepté, elle n’a aucun accès. Vérifiez ensuite qu’elle apparaît bien dans la liste.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout good">
+        <strong>Les bonnes pratiques de sécurité</strong>
+        <p>Gardez au moins deux personnes avec le contrôle total. Exigez la double authentification pour chacune. Ne partagez jamais un mot de passe : donnez un accès nominatif. Retirez l’accès dès qu’un collaborateur quitte l’équipe.</p>
+      </div>
+      <div class="callout tip">
+        <strong>Si la Page appartient à un portefeuille d’entreprise</strong>
+        <p>Les accès se gèrent alors depuis Meta Business Suite, dans <span class="ui">Paramètres</span> › <span class="ui">Comptes</span> › <span class="ui">Pages</span>. Seule une personne avec le contrôle total peut en attribuer.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPITRE 3 ============ -->
+    <section class="chapitre" id="certifier" data-nav="Rendre la Page officielle">
+      <h2><span class="ch-n">3</span>Rendre la Page officielle</h2>
+      <p class="intro">« Officielle » recouvre trois choses différentes. Les confondre est la source d’erreur la plus courante : commencez par comprendre laquelle vous voulez.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Niveau</th><th>Ce que cela apporte</th><th>Badge visible</th></tr></thead>
+          <tbody>
+            <tr><td>Page complète et cohérente</td><td>Nom, catégorie, site, coordonnées et logo identiques partout. Base indispensable pour tout le reste.</td><td>Non</td></tr>
+            <tr><td>Vérification de l’entreprise</td><td>Prouve à Meta que votre entreprise existe légalement. Exigée pour certains outils publicitaires et pour WhatsApp Business.</td><td>Non</td></tr>
+            <tr><td>Meta Verified (badge bleu)</td><td>Badge, protection contre l’usurpation d’identité, accès au support. Abonnement mensuel payant.</td><td>Oui</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>A. Vérifier votre entreprise</h3>
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ouvrir le centre de sécurité</h3>
+            <div class="path"><span class="ui">Meta Business Suite</span><b>›</b><span class="ui">Paramètres</span><b>›</b><span class="ui">Centre de sécurité</span><b>›</b><span class="ui">Vérification de l’entreprise</span></div>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Fournir les informations légales</h3>
+            <p>Saisissez le nom légal, l’adresse, le téléphone et le site de l’entreprise. Ces données doivent correspondre exactement à vos documents officiels.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Téléverser un justificatif au nom de l’entreprise</h3>
+            <p>Registre du commerce, statuts, attestation fiscale ou facture de service public au nom de l’entreprise. Une pièce d’identité personnelle ne suffit pas pour cette étape.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>B. Obtenir le badge bleu avec Meta Verified</h3>
+      <p>L’ancien formulaire gratuit de demande de badge a été retiré pour le grand public. Le badge sur demande passe aujourd’hui par l’abonnement Meta Verified pour les entreprises ; la certification gratuite reste réservée à un petit nombre de personnalités et de grandes marques.</p>
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Remplir les conditions</h3>
+            <p>Il faut généralement : être majeur, avoir la double authentification, disposer du contrôle total sur le portefeuille d’entreprise, avoir une Page active avec un nom et des informations cohérents avec vos documents, et avoir terminé la vérification de l’entreprise.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Lancer la demande</h3>
+            <p>Dans Meta Business Suite ou dans les paramètres de la Page, ouvrez <span class="ui">Meta Verified</span>, choisissez la Page à certifier, puis l’offre correspondant à vos besoins. Le prix mensuel varie selon le pays et l’appareil : consultez-le sur l’écran d’abonnement avant de valider.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : écran Meta Verified avec badge et bouton d’abonnement"><div class="scr"><div class="s-bar">Meta Verified</div><svg class="s-badge" viewBox="0 0 24 24" aria-hidden="true"><path fill="#0866FF" d="M12 1.8l2.5 1.7 3-.2 1.2 2.8 2.7 1.4-.4 3L22 12l-1.9 1.6.4 3-2.7 1.4-1.2 2.8-3-.2L12 22.2l-2.5-1.7-3 .2-1.2-2.8-2.7-1.4.4-3L2 12l1.9-1.6-.4-3 2.7-1.4 1.2-2.8 3 .2z"/><path fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M7.8 12.3l3 3 5.6-6"/></svg><div class="s-center s-big">Ma Page Officielle</div><div class="s-card s-row s-between"><span>Offre entreprise</span><span class="s-av dark"></span></div><div class="s-btn hl">S’abonner</div></div></div><figcaption>Schéma. Après vérification de l’entreprise, choisissez l’offre et validez l’abonnement.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Envoyer les justificatifs et attendre l’examen</h3>
+            <p>Meta demande des documents d’identité ou d’entreprise. L’examen prend de quelques heures à plusieurs jours. Vous êtes prévenu par notification dans Facebook et par e-mail.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="callout warn">
+        <strong>Deux pièges à éviter</strong>
+        <p>Une fois la Page certifiée, changer le nom ou certaines informations oblige à repasser par la vérification. Et méfiez-vous des « agences » qui vendent la certification contre paiement : seule la procédure officielle dans Meta peut l’accorder.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPITRE 4 ============ -->
+    <section class="chapitre" id="business-suite" data-nav="Activer Meta Business Suite">
+      <h2><span class="ch-n">4</span>Activer Meta Business Suite</h2>
+      <p class="intro">Meta Business Suite est l’outil central de Meta pour gérer votre Page : publier, planifier, répondre aux messages, suivre les statistiques et, plus tard, lancer des publicités. Il fonctionne sur ordinateur et dans une application mobile gratuite.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Se connecter</h3>
+            <p>Allez sur <a href="https://business.facebook.com" target="_blank" rel="noopener">business.facebook.com</a> et connectez-vous avec le compte Facebook qui a le contrôle total de la Page. Votre Page est normalement proposée automatiquement.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : accueil de Meta Business Suite avec la vignette Monétisation"><div class="scr"><div class="s-bar">Business Suite</div><div class="s-card s-row"><span class="s-av dark"></span><strong>Ma Page Officielle</strong></div><div class="s-grid"><div class="s-tile">Portée</div><div class="s-tile">Messages</div><div class="s-tile">Planifier</div><div class="s-tile hl">Monétisation</div></div><div class="s-nav"><span class="on">Accueil</span><span>Planner</span><span>Messages</span><span>Stats</span></div></div></div><figcaption>Schéma. L’accueil de l’application regroupe vos outils ; la monétisation est dans <strong>Tous les outils</strong>.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Créer ou choisir le portefeuille d’entreprise</h3>
+            <p>Un portefeuille d’entreprise regroupe vos Pages, comptes publicitaires et équipes. S’il n’en existe pas, créez-en un : nom de l’entreprise, votre nom et votre e-mail professionnel. Rattachez-y la Page.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Connecter vos autres comptes</h3>
+            <p>Si vous en avez, reliez Instagram et WhatsApp Business.</p>
+            <div class="path"><span class="ui">Paramètres</span><b>›</b><span class="ui">Comptes</span><b>›</b><span class="ui">Pages</span> / <span class="ui">Comptes Instagram</span></div>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Inviter l’équipe avec les bons droits</h3>
+            <div class="path"><span class="ui">Paramètres</span><b>›</b><span class="ui">Personnes</span><b>›</b><span class="ui">Inviter des personnes</span></div>
+            <p>Appliquez le principe du moindre privilège : accès aux tâches pour la plupart, contrôle total pour deux personnes seulement.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Installer l’application mobile</h3>
+            <p>Téléchargez « Meta Business Suite » sur votre téléphone pour répondre aux messages et publier en déplacement.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Ce que vous trouverez dans l’outil</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Menu</th><th>À quoi il sert</th></tr></thead>
+          <tbody>
+            <tr><td>Accueil</td><td>Vue d’ensemble des performances, des alertes et des actions à mener.</td></tr>
+            <tr><td>Planificateur</td><td>Créer, programmer et visualiser vos publications et stories.</td></tr>
+            <tr><td>Boîte de réception</td><td>Messages et commentaires Facebook, Instagram et WhatsApp au même endroit.</td></tr>
+            <tr><td>Statistiques</td><td>Portée, abonnés, engagement et audience.</td></tr>
+            <tr><td>Monétisation</td><td>Éligibilité, programmes de revenus et paiements (voir chapitre 5).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout tip">
+        <strong>Sécurisez dès maintenant</strong>
+        <p>Dans <span class="ui">Paramètres</span> › <span class="ui">Centre de sécurité</span>, exigez la double authentification pour toutes les personnes du portefeuille.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPITRE 5 ============ -->
+    <section class="chapitre" id="monetiser" data-nav="Activer la monétisation">
+      <h2><span class="ch-n">5</span>Activer la monétisation</h2>
+      <p class="intro">La monétisation n’est pas un interrupteur que l’on active à volonté : Meta ouvre l’accès aux Pages qui respectent ses règles et atteignent certains seuils, dans les pays pris en charge.</p>
+
+      <h3>Conditions générales</h3>
+      <ul>
+        <li>Être majeur et résider dans un pays où les outils de monétisation sont disponibles.</li>
+        <li>Posséder une Page (ou un profil en mode professionnel), en règle avec les Standards de la communauté.</li>
+        <li>Respecter les Politiques de monétisation des partenaires et les Politiques de monétisation du contenu.</li>
+        <li>Publier du contenu original : les contenus recyclés, volés ou sans valeur ajoutée sont le motif de refus le plus fréquent.</li>
+      </ul>
+
+      <h3>Les sources de revenus</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Programme</th><th>Principe</th><th>Conditions</th></tr></thead>
+          <tbody>
+            <tr><td>Content Monetization</td><td>Programme unique de rémunération à la performance pour Reels, vidéos longues, photos et textes.</td><td>Seuils souvent cités : 10 000 abonnés, 600 000 minutes vues sur 60 jours, 5 vidéos. Meta les ajuste et certains accès se font sur invitation.</td></tr>
+            <tr><td>Stars</td><td>Vos spectateurs vous envoient des étoiles pendant vos lives.</td><td>Seuils nettement plus bas, avec des lives réguliers.</td></tr>
+            <tr><td>Abonnements</td><td>Contenu exclusif contre un paiement mensuel de vos fans.</td><td>Variable selon le pays et l’invitation.</td></tr>
+            <tr><td>Contenu de marque</td><td>Publications sponsorisées avec le label « Partenariat rémunéré ».</td><td>Ouvert à toute Page ; la mention du partenariat est obligatoire.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout warn">
+        <strong>Ne vous fiez pas à un chiffre trouvé sur Internet</strong>
+        <p>Les seuils changent selon les périodes, les pays et les programmes. La seule source fiable est l’écran de monétisation de votre propre Page, qui indique ce qui vous manque.</p>
+      </div>
+
+      <h3>Activer pas à pas</h3>
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ouvrir l’outil de monétisation</h3>
+            <div class="path"><span class="ui">Meta Business Suite</span><b>›</b><span class="ui">Tous les outils</span><b>›</b><span class="ui">Monétisation</span></div>
+            <p>Depuis Facebook, vous le trouvez aussi dans le tableau de bord professionnel de la Page.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Consulter votre éligibilité</h3>
+            <p>L’écran liste chaque programme avec les critères remplis et manquants. Si un programme est grisé, Meta vous indique que la Page n’est pas encore éligible : abonnés, minutes vues, ancienneté ou infractions.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : écran Monétisation avec les critères d’éligibilité et leur progression"><div class="scr"><div class="s-bar">Monétisation</div><div class="s-card hl"><div class="s-row s-between"><span>Abonnés</span><strong>8 400 / 10 000</strong></div><div class="s-prog"><i style="width:84%"></i></div></div><div class="s-card"><div class="s-row s-between"><span>Minutes vues, 60 jours</span><strong>40 %</strong></div><div class="s-prog"><i class="b" style="width:40%"></i></div></div><div class="s-card s-row s-between"><span>Standards de la communauté</span><strong style="color:#0E7A56">OK</strong></div></div></div><figcaption>Schéma. L’écran indique, critère par critère, ce qu’il vous reste à atteindre (chiffres d’exemple).</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Accepter les conditions et s’inscrire</h3>
+            <p>Lisez et acceptez les conditions de chaque programme disponible. Vous devez avoir le contrôle total de la Page pour le faire.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Configurer les paiements</h3>
+            <p>Renseignez vos informations fiscales et le mode de versement proposé dans votre pays. Les mêmes informations doivent correspondre à l’identité du titulaire de la Page.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Suivre vos revenus</h3>
+            <p>Consultez régulièrement les statistiques de monétisation et la section des violations : une seule infraction grave peut suspendre les revenus.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Pour atteindre les seuils plus vite</h3>
+      <ul>
+        <li>Publiez à rythme régulier, avec une priorité aux vidéos courtes et aux lives.</li>
+        <li>Créez vos propres contenus et utilisez la musique de la bibliothèque autorisée.</li>
+        <li>Répondez aux commentaires : l’engagement nourrit la portée.</li>
+        <li>Évitez les appels artificiels à réagir (« likez pour gagner ») qui pénalisent la Page.</li>
+      </ul>
+    </section>
+
+    <!-- ============ CHAPITRE 6 : PUBLICITÉ ============ -->
+    <section class="chapitre" id="pub" data-nav="Campagne publicitaire">
+      <h2><span class="ch-n"></span>Lancer une campagne publicitaire</h2>
+      <p class="intro">La publicité montre votre Page à des personnes qui ne vous connaissent pas encore, sur Facebook, Instagram et Messenger. Tout se règle dans un seul outil : le Gestionnaire de publicités.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Méthode</th><th>Idéal pour</th><th>Ce que vous réglez</th></tr></thead>
+          <tbody>
+            <tr><td>Booster une publication</td><td>Débuter vite, ou pousser un contenu qui marche déjà.</td><td>Un objectif simple, l’audience, le budget et la durée.</td></tr>
+            <tr><td>Gestionnaire de publicités</td><td>Des campagnes suivies, avec plusieurs audiences et visuels.</td><td>Tout, à trois niveaux (voir plus bas).</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Commencez par booster une publication pour comprendre le principe, puis passez au Gestionnaire dès que vous voulez choisir précisément votre objectif et mesurer vos résultats.</p>
+
+      <h3>A. Préparer le compte publicitaire</h3>
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Créer le compte publicitaire</h3>
+            <div class="path"><span class="ui">Meta Business Suite</span><b>›</b><span class="ui">Paramètres</span><b>›</b><span class="ui">Comptes</span><b>›</b><span class="ui">Comptes publicitaires</span><b>›</b><span class="ui">Ajouter</span></div>
+            <p>Choisissez <span class="ui">Créer un compte publicitaire</span>, donnez-lui un nom clair, puis réglez le fuseau horaire et la devise.</p>
+            <div class="callout warn">
+              <strong>Choisissez la devise avec soin</strong>
+              <p>La devise ne peut plus être modifiée après la création du compte. Prenez celle dans laquelle vous paierez réellement.</p>
+            </div>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ajouter un moyen de paiement</h3>
+            <p>Dans <span class="ui">Paramètres de facturation</span>, ajoutez une carte bancaire ou un autre moyen proposé dans votre pays (carte prépayée, portefeuille mobile : cela dépend de la disponibilité). Si un paiement échoue, la diffusion de vos publicités s’arrête.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : écran de choix du moyen de paiement publicitaire"><div class="scr"><div class="s-bar">Paiement</div><div class="s-card s-row"><span class="s-tog on"></span><span>Carte bancaire</span></div><div class="s-card s-row"><span class="s-tog"></span><span>Autre moyen (selon le pays)</span></div><div class="s-btn hl">Ajouter le moyen de paiement</div></div></div><figcaption>Schéma. Les moyens proposés dépendent de votre pays.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Donner l’accès à l’équipe</h3>
+            <p>L’accès à la Page n’inclut pas toujours l’accès au compte publicitaire. Attribuez-le séparément dans <span class="ui">Paramètres</span> › <span class="ui">Personnes</span>, avec les droits strictement nécessaires.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Ouvrir le Gestionnaire de publicités</h3>
+            <p>Allez sur <a href="https://adsmanager.facebook.com" target="_blank" rel="noopener">adsmanager.facebook.com</a>, ou ouvrez-le depuis <span class="ui">Meta Business Suite</span> › <span class="ui">Tous les outils</span>. Sur téléphone, l’application « Gestionnaire de publicités » existe aussi.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>B. Construire la campagne</h3>
+      <p>Une campagne se construit toujours en trois niveaux. Retenir cette structure évite la plupart des confusions.</p>
+      <div class="levels">
+        <div class="lv"><b>Campagne</b><span>Le but : que voulez-vous obtenir ?</span></div>
+        <div class="lv"><b>Ensemble de publicités</b><span>Qui touchez-vous, où, avec quel budget et sur quelles dates ?</span></div>
+        <div class="lv"><b>Publicité</b><span>Ce que les gens voient : visuel, texte et bouton.</span></div>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Choisir l’objectif</h3>
+            <p>Cliquez sur <span class="ui">+ Créer</span>, puis choisissez l’un des six objectifs. Meta optimise toute la diffusion vers cet objectif : un mauvais choix coûte cher.</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Objectif</th><th>À choisir pour</th></tr></thead>
+                <tbody>
+                  <tr><td>Notoriété</td><td>Faire connaître la marque au plus grand nombre de personnes.</td></tr>
+                  <tr><td>Trafic</td><td>Envoyer des visiteurs vers un site ou une page de destination.</td></tr>
+                  <tr><td>Interactions</td><td>Obtenir des messages, des réactions, des abonnés à la Page.</td></tr>
+                  <tr><td>Prospects</td><td>Recueillir des contacts (formulaire, appel, WhatsApp).</td></tr>
+                  <tr><td>Promotion de l’app</td><td>Obtenir des installations d’application.</td></tr>
+                  <tr><td>Ventes</td><td>Provoquer des achats sur un site ou une boutique.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Pour faire grandir une Page, prenez <strong>Interactions</strong>. Pour recevoir des demandes par message, prenez aussi <strong>Interactions</strong> (destination Messenger ou WhatsApp). Pour vendre, prenez <strong>Ventes</strong>.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : les six objectifs de campagne, Interactions mis en évidence"><div class="scr"><div class="s-bar">Objectif</div><div class="s-grid"><div class="s-tile">Notoriété</div><div class="s-tile">Trafic</div><div class="s-tile hl">Interactions</div><div class="s-tile">Prospects</div><div class="s-tile">App</div><div class="s-tile">Ventes</div></div><div class="s-btn">Continuer</div></div></div><figcaption>Schéma. Six objectifs possibles ; ici <strong>Interactions</strong> pour obtenir messages et abonnés.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Définir l’audience</h3>
+            <p>Au niveau de l’ensemble de publicités, choisissez où l’action se passe (Messenger, WhatsApp, site, Page), puis votre audience.</p>
+            <ul>
+              <li><strong>Lieu :</strong> ville, région ou rayon autour de votre adresse.</li>
+              <li><strong>Âge et langue :</strong> restez large tant que vous n’avez pas de données.</li>
+              <li><strong>Advantage+ audience :</strong> donnez à Meta quelques suggestions d’intérêts et laissez-le élargir.</li>
+              <li><strong>Emplacements :</strong> gardez les emplacements Advantage+ (automatiques) : les restreindre réduit la portée et augmente souvent le coût.</li>
+            </ul>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : réglage de l’audience avec lieu, âge et Advantage+"><div class="scr"><div class="s-bar">Audience</div><div class="s-field"><small>Lieu</small>Votre ville, rayon de 25 km</div><div class="s-field"><small>Âge</small>18 à 45 ans</div><div class="s-card s-row s-between"><span>Advantage+ audience</span><span class="s-tog on hl"></span></div><div class="s-card"><div class="s-row s-between"><span>Portée estimée</span><strong>Large</strong></div><div class="s-prog"><i class="b" style="width:70%"></i></div></div></div></div><figcaption>Schéma. Restez large au départ et laissez Advantage+ élargir l’audience.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Fixer le budget et le calendrier</h3>
+            <p>Le <strong>budget quotidien</strong> dépense à peu près le même montant chaque jour. Le <strong>budget global</strong> répartit une somme sur toute la durée. Ajoutez une date de fin pour éviter les mauvaises surprises.</p>
+            <p>Commencez avec un montant que vous pouvez vous permettre de perdre, et laissez tourner plusieurs jours : Meta a besoin de temps et de résultats pour apprendre.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : réglage du budget et des dates"><div class="scr"><div class="s-bar">Budget et calendrier</div><div class="s-grid"><div class="s-tile hl">Quotidien</div><div class="s-tile">Global</div></div><div class="s-field"><small>Budget par jour</small>Votre montant</div><div class="s-field"><small>Début</small>Lundi, 08:00</div><div class="s-field"><small>Fin</small>Dimanche suivant</div></div></div><figcaption>Schéma. Un budget quotidien et une date de fin évitent les dépenses imprévues.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Créer la publicité</h3>
+            <p>Choisissez la Page qui diffuse, le format (image, vidéo ou carrousel), puis rédigez :</p>
+            <ul>
+              <li>un <strong>texte principal</strong> court, avec l’accroche dans la première ligne ;</li>
+              <li>un <strong>titre</strong> qui dit clairement l’offre ;</li>
+              <li>un <strong>bouton</strong> cohérent avec l’objectif (<span class="ui">Envoyer un message</span>, <span class="ui">En savoir plus</span>, <span class="ui">Acheter</span>).</li>
+            </ul>
+            <p>Visuels recommandés : vidéo verticale 1 080 × 1 920 px (9:16) pour Reels et Stories, image 1 080 × 1 080 px ou 1 080 × 1 350 px pour le fil.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : aperçu d’une publicité avec visuel, texte et bouton"><div class="scr"><div class="s-bar">Aperçu</div><div class="s-card" style="display:grid;gap:6px"><div class="s-row"><span class="s-av dark"></span><strong>Ma Page Officielle</strong></div><span class="s-line" style="flex:none"></span><div class="s-img"></div><span class="s-line sh" style="flex:none"></span><div class="s-btn hl">Envoyer un message</div></div></div></div><figcaption>Schéma. Visuel, texte court et un bouton d’appel à l’action cohérent avec l’objectif.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Publier et attendre la validation</h3>
+            <p>Cliquez sur <span class="ui">Publier</span>. Meta examine la publicité, en général en moins de 24 heures. Le statut passe de <span class="ui">En cours d’examen</span> à <span class="ui">Active</span>. En cas de refus, lisez le motif, corrigez, puis demandez un nouvel examen.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Suivre et ajuster</h3>
+            <p>Consultez les résultats chaque jour au début, puis deux fois par semaine. Regardez surtout :</p>
+            <ul>
+              <li><strong>Portée :</strong> combien de personnes différentes ont vu la publicité.</li>
+              <li><strong>Coût par résultat :</strong> ce que vous paie chaque message, clic ou abonné.</li>
+              <li><strong>Taux de clic :</strong> la publicité donne-t-elle envie d’agir ?</li>
+              <li><strong>Fréquence :</strong> au-delà de 3 à 4 affichages par personne, la lassitude s’installe.</li>
+            </ul>
+            <p>Modifiez le budget par petites étapes, coupez ce qui ne marche pas après quelques jours, et testez deux ou trois visuels différents.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : tableau de résultats avec portée, résultats et coût"><div class="scr"><div class="s-bar">Résultats</div><div class="s-grid"><div class="s-tile"><span class="s-big">Portée</span><br>personnes</div><div class="s-tile"><span class="s-big">Résultats</span><br>messages</div><div class="s-tile hl"><span class="s-big">Coût</span><br>par résultat</div><div class="s-tile"><span class="s-big">Clics</span><br>sur le lien</div></div><div class="s-card"><div class="s-bars"><i style="height:35%"></i><i style="height:55%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:100%"></i><i style="height:70%"></i></div></div></div></div><figcaption>Schéma. Surveillez surtout le coût par résultat et son évolution jour après jour.</figcaption></figure>
+          </div>
+        </li>
+      </ol>
+
+      <div class="callout warn">
+        <strong>Règles à connaître avant de dépenser</strong>
+        <p>Certains sujets exigent une déclaration spéciale (crédit, emploi, logement, politique) et plusieurs contenus sont interdits. Ne promettez jamais de résultats garantis, et n’utilisez que des visuels dont vous détenez les droits. Un compte publicitaire désactivé est difficile à récupérer.</p>
+      </div>
+      <div class="callout tip">
+        <strong>Vous vendez sur un site ?</strong>
+        <p>Installez le pixel Meta (ou l’API Conversions) et vérifiez votre domaine dans Meta Business Suite. Sans cela, Meta ne peut pas mesurer les achats ni optimiser vers eux.</p>
+      </div>
+    </section>
+
+    <!-- ============ CHAPITRE 7 : AUDIENCE ============ -->
+    <section class="chapitre" id="audience" data-nav="Faire grandir l’audience">
+      <h2><span class="ch-n"></span>Faire grandir et entretenir son audience</h2>
+      <p class="intro">La publicité accélère, la régularité retient. Une audience grandit quand les bonnes personnes voient vos contenus et que vous restez actif auprès d’elles. Voici une méthode simple, à répéter chaque semaine.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Définir qui vous voulez atteindre</h3>
+            <p>Décrivez en trois lignes la personne idéale : son âge approximatif, son lieu, son problème principal, ce qu’elle cherche chez vous. Choisissez ensuite trois ou quatre thèmes de contenu qui reviendront sans cesse :</p>
+            <ul>
+              <li><strong>Éduquer :</strong> conseils, tutoriels, réponses aux questions fréquentes.</li>
+              <li><strong>Montrer les coulisses :</strong> l’équipe, la fabrication, une journée type.</li>
+              <li><strong>Prouver :</strong> avis de clients, résultats, avant et après.</li>
+              <li><strong>Proposer :</strong> offres, nouveautés, invitations à agir.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Planifier une semaine type</h3>
+            <p>La régularité compte plus que la quantité : trois à cinq contenus de qualité par semaine valent mieux qu’une publication quotidienne bâclée. Programmez-les à l’avance dans le Planificateur de Meta Business Suite.</p>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Jour</th><th>Format</th><th>Thème</th></tr></thead>
+                <tbody>
+                  <tr><td>Lundi</td><td>Reel de 15 à 30 secondes</td><td>Conseil éducatif</td></tr>
+                  <tr><td>Mardi</td><td>Photo ou carrousel</td><td>Témoignage ou résultat</td></tr>
+                  <tr><td>Mercredi</td><td>Reel</td><td>Coulisses</td></tr>
+                  <tr><td>Jeudi</td><td>Question ou sondage</td><td>Conversation avec la communauté</td></tr>
+                  <tr><td>Vendredi</td><td>Live ou Reel</td><td>Offre ou nouveauté</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Pour choisir l’heure de publication, consultez <span class="ui">Statistiques</span> › <span class="ui">Audience</span> : vous y voyez les jours et heures où vos abonnés sont actifs.</p>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : planificateur hebdomadaire avec Reels, photos et live"><div class="scr"><div class="s-bar">Planificateur</div><div class="s-days"><div><span>L</span><b class="r">Reel</b></div><div><span>M</span><b class="p">Photo</b></div><div><span>M</span><b class="r">Reel</b></div><div><span>J</span><b>Sondage</b></div><div><span>V</span><b class="l">Live</b></div><div><span>S</span><b></b></div><div><span>D</span><b></b></div></div><div class="s-card s-row s-between"><span>Heures actives</span><strong>18 h à 21 h</strong></div><div class="s-btn hl">Programmer une publication</div></div></div><figcaption>Schéma. Une semaine type : programmez les contenus à l’avance et gardez le même rythme.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Produire des vidéos courtes originales</h3>
+            <p>Depuis 2025, toutes les vidéos Facebook sont diffusées comme des Reels, et ce format touche le plus de personnes qui ne vous suivent pas encore. Pour qu’il fonctionne :</p>
+            <ul>
+              <li>captez l’attention dans les trois premières secondes ;</li>
+              <li>filmez en vertical et ajoutez des sous-titres : beaucoup regardent sans le son ;</li>
+              <li>créez vos propres contenus, sans filigrane d’une autre application ;</li>
+              <li>utilisez de la musique issue de la bibliothèque autorisée.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Répondre vite aux commentaires et aux messages</h3>
+            <p>Les commentaires et les partages pèsent plus que les simples « J’aime ». Répondez aux commentaires dans l’heure qui suit la publication quand c’est possible, et gardez un délai de réponse court aux messages.</p>
+            <p>La <span class="ui">Boîte de réception</span> de Meta Business Suite regroupe tout au même endroit. Créez des réponses enregistrées pour les questions répétitives (horaires, prix, adresse).</p>
+            <div class="callout warn">
+              <strong>Pas d’appâts à engagement</strong>
+              <p>Les consignes du type « likez et partagez pour gagner » sont pénalisées. Posez plutôt une vraie question : « Quel modèle choisiriez-vous, et pourquoi ? »</p>
+            </div>
+            <figure class="shot"><div class="phone" role="img" aria-label="Schéma : boîte de réception unifiée avec réponses enregistrées"><div class="scr"><div class="s-bar">Boîte de réception</div><div class="s-card s-row"><span class="s-av"></span><div style="flex:1;display:grid;gap:4px"><span class="s-line" style="width:60%;flex:none"></span><span class="s-line" style="width:80%;flex:none"></span></div></div><div class="s-card s-row"><span class="s-av"></span><div style="flex:1;display:grid;gap:4px"><span class="s-line" style="width:50%;flex:none"></span><span class="s-line" style="width:70%;flex:none"></span></div></div><div class="s-card s-row"><span class="s-av"></span><div style="flex:1;display:grid;gap:4px"><span class="s-line" style="width:72%;flex:none"></span><span class="s-line" style="width:38%;flex:none"></span></div></div><div class="s-btn ghost hl">Réponses enregistrées</div></div></div><figcaption>Schéma. Messages et commentaires au même endroit, avec des réponses prêtes pour les questions fréquentes.</figcaption></figure>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Créer une communauté autour de la Page</h3>
+            <p>Un Groupe lié à votre Page réunit vos clients les plus actifs, et les Lives créent un rendez-vous régulier. Si vous organisez un jeu-concours, respectez les règles de Meta : on ne peut pas obliger les participants à partager sur leur profil personnel.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Mesurer chaque semaine</h3>
+            <p>Réservez quinze minutes chaque lundi dans <span class="ui">Statistiques</span>. Suivez trois indicateurs simples :</p>
+            <div class="kpis">
+              <div class="kpi"><b>Croissance nette</b><span>Nouveaux abonnés moins désabonnements.</span></div>
+              <div class="kpi"><b>Portée hors abonnés</b><span>La part de personnes touchées qui ne vous suivent pas encore.</span></div>
+              <div class="kpi"><b>Engagement</b><span>Commentaires, partages et enregistrements par contenu.</span></div>
+            </div>
+            <p>Repérez vos deux meilleurs contenus de la semaine et refaites-en de semblables.</p>
+          </div>
+        </li>
+        <li class="step">
+          <label class="mark"><input type="checkbox" aria-label="Marquer l’étape comme faite"><span class="num"></span></label>
+          <div>
+            <h3>Entretenir la Page</h3>
+            <ul>
+              <li>Masquez le spam et les faux comptes ; activez le filtre de mots indésirables.</li>
+              <li>Mettez à jour horaires, téléphone, offres et photo de couverture quand ils changent.</li>
+              <li>Remettez en avant vos meilleurs contenus anciens.</li>
+              <li>Relancez les personnes qui vous ont écrit, sans jamais acheter de « likes » ni d’abonnés.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+      <h3>La boucle de croissance</h3>
+      <p>Boostez en priorité les contenus qui marchent déjà sans publicité : vous payez pour amplifier ce qui fonctionne plutôt que pour tester au hasard.</p>
+      <ol class="loop">
+        <li>Publier</li>
+        <li>Mesurer</li>
+        <li>Booster le meilleur</li>
+        <li>Répondre</li>
+        <li>Recommencer</li>
+      </ol>
+      <div class="callout good">
+        <strong>Le rythme qui tient dans la durée</strong>
+        <p>Une Page qui publie quatre fois par semaine pendant six mois grandit davantage qu’une Page qui publie tous les jours pendant deux semaines avant de s’arrêter. Choisissez un rythme que vous pouvez tenir.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ZONE D’EXTENSION
+         Pour ajouter le prochain chapitre (campagnes publicitaires),
+         insérez ici un bloc <section class="chapitre" id="..." data-nav="Titre">
+         avec un <h2><span class="ch-n"></span>Titre</h2>. Le sommaire,
+         la numérotation et le compteur d’étapes se mettent à jour seuls.
+         ============================================================ -->
+
+    <!-- ============ DÉPANNAGE ============ -->
+    <section class="chapitre" id="faq" data-nav="Questions fréquentes">
+      <h2><span class="ch-n">6</span>Questions fréquentes</h2>
+      <details>
+        <summary>Je ne vois pas l’option « Accès à la Page »</summary>
+        <div><p>Vous n’êtes sans doute pas connecté en tant que Page, ou votre accès n’est pas un contrôle total. Basculez vers la Page, ou demandez à un responsable de vous promouvoir.</p></div>
+      </details>
+      <details>
+        <summary>Meta a refusé ma demande de vérification</summary>
+        <div><p>Vérifiez que le nom de la Page, l’adresse et le téléphone correspondent exactement à vos documents, que les justificatifs sont lisibles et récents, et que la double authentification est active. Corrigez puis redéposez la demande.</p></div>
+      </details>
+      <details>
+        <summary>L’outil de monétisation n’apparaît pas</summary>
+        <div><p>Votre pays n’est peut-être pas encore pris en charge, ou la Page ne remplit pas les conditions de base. Consultez la page d’aide de Meta sur la disponibilité des outils de monétisation par pays et par langue.</p></div>
+      </details>
+      <details>
+        <summary>Puis-je gérer plusieurs Pages dans le même portefeuille ?</summary>
+        <div><p>Oui. Rattachez chaque Page au portefeuille d’entreprise et attribuez les accès Page par Page.</p></div>
+      </details>
+      <details>
+        <summary>Ma publicité a été refusée</summary>
+        <div><p>Ouvrez le Gestionnaire de publicités et cliquez sur la publicité refusée : Meta indique le motif. Corrigez le texte ou le visuel concerné, puis demandez un nouvel examen.</p></div>
+      </details>
+      <details>
+        <summary>Ma publicité ne dépense rien</summary>
+        <div><p>Vérifiez que le paiement est valide, que le budget et les dates sont corrects, que la publicité est bien <em>Active</em> et non en cours d’examen, et que l’audience n’est pas trop étroite.</p></div>
+      </details>
+      <details>
+        <summary>Ma Page grandit trop lentement</summary>
+        <div><p>Contrôlez la régularité de vos publications, la part de Reels originaux et vos temps de réponse. La croissance prend des semaines : évitez d’acheter des abonnés, qui font chuter la portée.</p></div>
+      </details>
+    </section>
+
+  </main>
+</div>
+
+<a class="totop" href="#top" aria-label="Retour en haut de la page">↑</a>
+
+<footer>Guide indépendant, non affilié à Meta. Les noms de produits et de menus appartiennent à leurs propriétaires et peuvent changer sans préavis.</footer>
+
+<script>
+(function () {
+  var chapters = Array.prototype.slice.call(document.querySelectorAll('.chapitre'));
+  var nav = document.getElementById('nav');
+
+  // Numérotation et sommaire générés à partir des chapitres
+  chapters.forEach(function (sec, i) {
+    var n = sec.querySelector('.ch-n');
+    if (n) n.textContent = i + 1;
+    var li = document.createElement('li');
+    var a = document.createElement('a');
+    a.href = '#' + sec.id;
+    a.innerHTML = '<span class="n">' + (i + 1) + '</span><span></span>';
+    a.lastChild.textContent = sec.getAttribute('data-nav') || sec.querySelector('h2').textContent;
+    li.appendChild(a);
+    nav.appendChild(li);
+  });
+
+  // Étiquettes des tableaux (affichés en cartes sur mobile)
+  Array.prototype.forEach.call(document.querySelectorAll('table'), function (t) {
+    var heads = Array.prototype.map.call(t.querySelectorAll('thead th'), function (th) { return th.textContent.trim(); });
+    Array.prototype.forEach.call(t.querySelectorAll('tbody tr'), function (tr) {
+      Array.prototype.forEach.call(tr.children, function (td, i) { if (heads[i]) td.setAttribute('data-label', heads[i]); });
+    });
+  });
+
+  // Chapitre actif pendant le défilement
+  var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+  function setActive(id) {
+    links.forEach(function (l) {
+      var on = l.getAttribute('href') === '#' + id;
+      if (on) {
+        l.setAttribute('aria-current', 'true');
+        if (nav.scrollWidth > nav.clientWidth && getComputedStyle(nav).flexDirection === 'row') {
+          var li = l.parentNode;
+          var left = li.getBoundingClientRect().left - nav.getBoundingClientRect().left + nav.scrollLeft;
+          nav.scrollTo({ left: left - (nav.clientWidth - li.offsetWidth) / 2, behavior: 'smooth' });
+        }
+      } else l.removeAttribute('aria-current');
+    });
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    chapters.forEach(function (c) { io.observe(c); });
+  }
+
+  // Progression des étapes cochées (en mémoire uniquement)
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('.step input[type="checkbox"]'));
+  var doneEl = document.getElementById('done');
+  var totalEl = document.getElementById('total');
+  var fill = document.getElementById('barfill');
+  totalEl.textContent = boxes.length;
+  function refresh() {
+    var d = boxes.filter(function (b) { return b.checked; }).length;
+    doneEl.textContent = d;
+    fill.style.width = (boxes.length ? (d / boxes.length) * 100 : 0) + '%';
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', refresh); });
+  refresh();
+
+  // Bouton de retour en haut
+  var totop = document.querySelector('.totop');
+  window.addEventListener('scroll', function () {
+    totop.classList.toggle('show', window.scrollY > 700);
+  }, { passive: true });
+})();
+</script>
+</body>
+</html>
